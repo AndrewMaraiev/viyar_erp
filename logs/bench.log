@@ -1,0 +1,93 @@
+2023-12-04 14:12:23,029 DEBUG cd frappe-bench && python3 -m venv env
+2023-12-04 14:12:29,048 DEBUG cd frappe-bench && /workspace/development/frappe-bench/env/bin/python -m pip install --quiet --upgrade pip
+2023-12-04 14:12:35,309 DEBUG cd frappe-bench && /workspace/development/frappe-bench/env/bin/python -m pip install --quiet wheel
+2023-12-04 14:12:37,410 LOG Getting frappe
+2023-12-04 14:12:37,410 DEBUG cd frappe-bench/apps && git clone https://github.com/frappe/frappe.git --branch version-14 --depth 1 --origin upstream
+2023-12-04 14:12:48,913 LOG Installing frappe
+2023-12-04 14:12:48,915 DEBUG cd /workspace/development/frappe-bench && /workspace/development/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /workspace/development/frappe-bench/apps/frappe 
+2023-12-04 14:14:35,005 DEBUG cd /workspace/development/frappe-bench/apps/frappe && yarn install
+2023-12-04 14:15:36,544 WARNING restart failed: Couldn't find supervisorctl in PATH
+2023-12-04 14:15:36,546 DEBUG cd frappe-bench && bench build
+2023-12-04 14:15:36,642 INFO /home/frappe/.local/bin/bench build
+2023-12-04 14:16:00,880 LOG setting up backups
+2023-12-04 14:16:00,905 LOG backups were set up
+2023-12-04 14:16:00,905 INFO Bench frappe-bench initialized
+2023-12-04 14:16:23,647 INFO /home/frappe/.local/bin/bench set-config -g db_host mariadb
+2023-12-04 14:16:32,234 INFO /home/frappe/.local/bin/bench set-config -g redis_cache redis://redis-cache:6379
+2023-12-04 14:16:44,025 INFO /home/frappe/.local/bin/bench set-config -g redis_queue redis://redis-queue:6379
+2023-12-04 14:16:49,674 INFO /home/frappe/.local/bin/bench set-config -g redis_socketio redis://redis-socketio:6379
+2023-12-04 14:18:00,406 INFO /home/frappe/.local/bin/bench new-site viyar.localhost --mariadb-root-password 123 --admin-password admin --no-mariadb-socket
+2023-12-04 14:23:00,044 INFO /home/frappe/.local/bin/bench --site mysite.localhost set-config developer_mode 1
+2023-12-04 14:23:24,221 INFO /home/frappe/.local/bin/bench --site viyar.localhost set-config developer_mode 1
+2023-12-04 14:23:38,133 INFO /home/frappe/.local/bin/bench --site viyar.localhost clear-cache
+2023-12-04 14:24:24,818 INFO /home/frappe/.local/bin/bench get-app --branch version-14 erpnext
+2023-12-04 14:24:26,064 LOG Getting erpnext
+2023-12-04 14:24:26,066 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext.git --branch version-14 --depth 1 --origin upstream
+2023-12-04 14:24:46,134 LOG Installing erpnext
+2023-12-04 14:24:48,872 DEBUG cd /workspace/development/frappe-bench && /workspace/development/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /workspace/development/frappe-bench/apps/erpnext 
+2023-12-04 14:25:36,905 DEBUG cd /workspace/development/frappe-bench/apps/erpnext && yarn install
+2023-12-04 14:25:38,786 DEBUG bench build --app erpnext
+2023-12-04 14:25:38,873 INFO /home/frappe/.local/bin/bench build --app erpnext
+2023-12-04 14:25:46,949 WARNING restart failed: Couldn't find supervisorctl in PATH
+2023-12-04 14:28:09,566 INFO /home/frappe/.local/bin/bench --site viyar.localhost install-app erpnext
+2023-12-04 14:30:15,723 INFO /home/frappe/.local/bin/bench --site viyar.localhost migrate
+2023-12-04 14:31:48,403 INFO /home/frappe/.local/bin/bench --site viyar.localhost clear-cache
+2023-12-04 14:32:14,054 INFO /home/frappe/.local/bin/bench start
+2023-12-04 14:32:14,291 INFO /home/frappe/.local/bin/bench serve --port 8000
+2023-12-04 14:32:14,299 INFO /home/frappe/.local/bin/bench schedule
+2023-12-04 14:32:14,314 INFO /home/frappe/.local/bin/bench worker
+2023-12-04 14:32:14,339 INFO /home/frappe/.local/bin/bench watch
+2023-12-04 14:35:25,857 INFO /home/frappe/.local/bin/bench start
+2023-12-04 14:35:26,054 INFO /home/frappe/.local/bin/bench serve --port 8000
+2023-12-04 14:35:26,071 INFO /home/frappe/.local/bin/bench watch
+2023-12-04 14:35:26,093 INFO /home/frappe/.local/bin/bench worker
+2023-12-04 14:35:26,095 INFO /home/frappe/.local/bin/bench schedule
+2023-12-04 14:40:59,390 INFO /home/frappe/.local/bin/bench set-config -g redis_socketio redis://redis-queue:6379
+2023-12-04 14:41:51,693 INFO /home/frappe/.local/bin/bench start
+2023-12-04 14:41:51,891 INFO /home/frappe/.local/bin/bench schedule
+2023-12-04 14:41:51,896 INFO /home/frappe/.local/bin/bench serve --port 8000
+2023-12-04 14:41:51,940 INFO /home/frappe/.local/bin/bench watch
+2023-12-04 14:41:51,985 INFO /home/frappe/.local/bin/bench worker
+2023-12-05 11:06:41,508 INFO /home/frappe/.local/bin/bench start
+2023-12-05 11:06:41,724 INFO /home/frappe/.local/bin/bench watch
+2023-12-05 11:06:41,734 INFO /home/frappe/.local/bin/bench serve --port 8000
+2023-12-05 11:06:41,798 INFO /home/frappe/.local/bin/bench schedule
+2023-12-05 11:06:41,806 INFO /home/frappe/.local/bin/bench worker
+2023-12-05 14:36:18,102 INFO /home/frappe/.local/bin/bench new-app viyar_erpnext
+2023-12-05 14:36:18,109 LOG creating new app viyar_erpnext
+2023-12-05 14:40:12,426 LOG Installing viyar_erpnext
+2023-12-05 14:40:12,433 DEBUG cd /workspace/development/frappe-bench && /workspace/development/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /workspace/development/frappe-bench/apps/viyar_erpnext 
+2023-12-05 14:40:17,181 DEBUG bench build --app viyar_erpnext
+2023-12-05 14:40:17,277 INFO /home/frappe/.local/bin/bench build --app viyar_erpnext
+2023-12-05 14:40:24,912 WARNING restart failed: Couldn't find supervisorctl in PATH
+2023-12-05 14:44:31,203 INFO /home/frappe/.local/bin/bench --site viyar.localhost install-app viyar_erpnext
+2023-12-05 14:45:49,409 INFO /home/frappe/.local/bin/bench start
+2023-12-05 14:45:49,624 INFO /home/frappe/.local/bin/bench serve --port 8000
+2023-12-05 14:45:49,651 INFO /home/frappe/.local/bin/bench schedule
+2023-12-05 14:45:49,719 INFO /home/frappe/.local/bin/bench watch
+2023-12-05 14:45:49,723 INFO /home/frappe/.local/bin/bench worker
+2023-12-06 11:16:43,025 INFO /home/frappe/.local/bin/bench start
+2023-12-06 11:16:43,300 INFO /home/frappe/.local/bin/bench watch
+2023-12-06 11:16:43,313 INFO /home/frappe/.local/bin/bench worker
+2023-12-06 11:16:43,327 INFO /home/frappe/.local/bin/bench schedule
+2023-12-06 11:16:43,373 INFO /home/frappe/.local/bin/bench serve --port 8000
+2023-12-06 11:17:36,244 INFO /home/frappe/.local/bin/bench init viyar_erpnext --frappe-branch version-14
+2023-12-06 11:17:36,352 DEBUG cd viyar_erpnext && python3 -m venv env
+2023-12-06 11:17:43,348 DEBUG cd viyar_erpnext && /workspace/development/frappe-bench/viyar_erpnext/env/bin/python -m pip install --quiet --upgrade pip
+2023-12-06 11:17:49,570 DEBUG cd viyar_erpnext && /workspace/development/frappe-bench/viyar_erpnext/env/bin/python -m pip install --quiet wheel
+2023-12-06 11:17:51,617 ERROR There was a problem while creating viyar_erpnext
+2023-12-06 11:18:00,234 INFO Rolling back Bench "viyar_erpnext"
+2023-12-06 11:23:59,354 INFO /home/frappe/.local/bin/bench init viyar_erpnext --frappe-branch version-14
+2023-12-06 11:23:59,504 DEBUG cd viyar_erpnext && python3 -m venv env
+2023-12-06 11:24:06,341 DEBUG cd viyar_erpnext && /workspace/development/frappe-bench/viyar_erpnext/env/bin/python -m pip install --quiet --upgrade pip
+2023-12-06 11:24:12,533 DEBUG cd viyar_erpnext && /workspace/development/frappe-bench/viyar_erpnext/env/bin/python -m pip install --quiet wheel
+2023-12-06 11:24:14,448 LOG Getting frappe
+2023-12-06 11:24:14,449 DEBUG cd viyar_erpnext/apps && git clone https://github.com/frappe/frappe.git --branch version-14 --depth 1 --origin upstream
+2023-12-06 11:24:28,727 LOG Installing frappe
+2023-12-06 11:24:28,729 DEBUG cd /workspace/development/frappe-bench/viyar_erpnext && /workspace/development/frappe-bench/viyar_erpnext/env/bin/python -m pip install --quiet --upgrade -e /workspace/development/frappe-bench/viyar_erpnext/apps/frappe 
+2023-12-06 11:25:51,218 DEBUG cd /workspace/development/frappe-bench/viyar_erpnext/apps/frappe && yarn install
+2023-12-06 11:26:51,051 WARNING restart failed: Couldn't find supervisorctl in PATH
+2023-12-06 11:26:51,053 DEBUG cd viyar_erpnext && bench build
+2023-12-06 11:27:23,847 LOG setting up backups
+2023-12-06 11:27:23,875 LOG backups were set up
+2023-12-06 11:27:23,877 INFO Bench viyar_erpnext initialized
